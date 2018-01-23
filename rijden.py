@@ -36,7 +36,6 @@ while True:
             curr_left = GPIO.input(leftIR)
             curr_middle = GPIO.input(middleIR)
             curr_right = GPIO.input(rightIR)
-
             if (curr_left == 1) and (curr_middle == 0) and (curr_right == 1):
                 robot.rechtdoor()
             elif (curr_right != 0) and ((curr_left == 0) or ((curr_left == 0) and (curr_middle == 0))):
