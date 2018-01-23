@@ -14,6 +14,18 @@ MotorL2 = 22
 MotorL3 = 10
 MotorL4 = 9
 
+def kruispunt(route):
+    if (route == 1):
+        for x in range(0, 100):
+            scherplinks()
+    elif (route == 2):
+        rechtdoor()
+    elif (route == 3):
+        for x in range(0, 100):
+            scherprechts()
+    else:
+        print "no route to host"
+
 class Robot:
     GPIO.setup(MotorR1,GPIO.OUT) #GPIO 2  -> Motor rechts A
     GPIO.setup(MotorR2,GPIO.OUT) #GPIO 3  -> Motor rechts B
@@ -366,14 +378,3 @@ class Robot:
         GPIO.output(MotorR3,0)
         GPIO.output(MotorR4,1)
         sleep(.001)
-    def kruispunt(route, self):
-        if (route == 1):
-            for x in range(0, 100):
-                scherplinks()
-        elif (route == 2):
-            rechtdoor()
-        elif (route == 3):
-            for x in range(0, 100):
-                scherprechts()
-        else:
-            print "no route to host"

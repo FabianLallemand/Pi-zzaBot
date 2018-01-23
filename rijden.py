@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 from time import sleep
 from robot_class import Robot
+from robot_class import kruispunt
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -53,7 +54,7 @@ while not stop:
                 print "scherprechts"
             elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 0):
                 #stop = True
-                robot.kruispunt(route)
+                kruispunt(route)
                 print "stop"
             else:
                 robot.rechtdoor()
