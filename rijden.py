@@ -69,6 +69,7 @@ while not stop:
                 print "scherprechts"
             elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 0):
                 if (kruisingCount == 1):
+                    started = False
                     stop = True
                 kruispunt(route)
                 kruisingCount += 1
