@@ -9,9 +9,9 @@ GPIO.setup(16,GPIO.OUT) #rechst
 
 def discolight(finish):
     if finish == True:
-        GPIO.output(20,True)
+        GPIO.output(16,True)
         sleep(5)
-        GPIO.output(20,False)
+        GPIO.output(16,False)
         print("joepie")
     else:
         print("nog niet klaar of onbekend")
