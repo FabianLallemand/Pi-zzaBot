@@ -19,6 +19,6 @@ while True:
         started = True
         while started:
             print "rijden"
-            robot.rechtdoor
+            robot.rechtdoor()
 
 GPIO.cleanup()
