@@ -374,5 +374,6 @@ class Robot:
             rechtdoor()
         elif (route == 3):
             for x in range(0, 100):
+                scherprechts()
         else:
             print "no route to host"
