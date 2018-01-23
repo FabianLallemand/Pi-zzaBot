@@ -13,7 +13,7 @@ buttonPin = 26
 buttonstate = 1
 started = False
 stop = False
-route = 2
+route = 3
 
 robot = Robot()
 
