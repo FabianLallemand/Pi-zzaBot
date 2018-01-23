@@ -37,6 +37,10 @@ GPIO.setup(leftIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 GPIO.setup(middleIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 GPIO.setup(rightIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 
+GPIO.setup(21,GPIO.OUT)
+GPIO.setup(20,GPIO.OUT) #links
+GPIO.setup(16,GPIO.OUT) #rechst
+
 GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 GPIO.setup(leftIR,GPIO.IN) #GPIO 14 -> Left IR out
@@ -49,6 +53,8 @@ while not stop:
     if (buttonstate == 0):
         print "start"
         started = True
+        GPIO.output(20,True)
+        GPIO.output(21,True)
         while started:
             buttonstate = GPIO.input(buttonPin)
             curr_left = GPIO.input(leftIR)
