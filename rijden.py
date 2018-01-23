@@ -47,10 +47,10 @@ while not stop:
             elif (curr_left == 1) and (curr_middle == 1) and (curr_right == 0):
                 robot.rechtsaf()
                 print "rechtsaf"
-            elif (curr_left == 1) and (curr_middle == 0) and (curr_right == 0):
+            elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 1):
                 robot.scherplinks()
                 print "scherplinks"
-            elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 1):
+            elif (curr_left == 1) and (curr_middle == 0) and (curr_right == 0):
                 robot.scherprechts()
                 print "scherprechts"
             elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 0):
