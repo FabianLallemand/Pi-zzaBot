@@ -19,12 +19,15 @@ robot = Robot()
 
 def kruispunt(route):
     if (route == 1):
-        for x in range(0, 100):
+        sleep(2)
+        for x in range(0, 1000):
             robot.scherplinks()
     elif (route == 2):
+        sleep(2)
         robot.rechtdoor()
     elif (route == 3):
-        for x in range(0, 100):
+        sleep(3)
+        for x in range(0, 1000):
             robot.scherprechts()
     else:
         print "no route to host"
