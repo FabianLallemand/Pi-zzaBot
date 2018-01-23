@@ -3,13 +3,15 @@ from time import sleep
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(9,GPIO.OUT)
+GPIO.setup(21,GPIO.OUT)
+GPIO.setup(20,GPIO.OUT)
+GPIO.setup(16,GPIO.OUT)
 
 def discolight(finish):
     if finish == True:
-        GPIO.output(9,True)
+        GPIO.output(16,True)
         sleep(5)
-        GPIO.output(9,False)
+        GPIO.output(16,False)
         print("joepie")
     else:
         print("nog niet klaar of onbekend")
