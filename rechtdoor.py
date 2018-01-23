@@ -1,3 +1,7 @@
+import RPi.GPIO as GPIO
+from time import sleep
+from robot_class import Robot
+
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
