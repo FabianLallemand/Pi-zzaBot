@@ -11,7 +11,7 @@ rightIR = 18
 
 buttonPin = 26
 buttonstate = 1
-event = 1
+event = 0
 
 robot = Robot()
 
@@ -31,7 +31,11 @@ while True:
 
     if (buttonstate == 0):
         print "start"
-        while True:
+        event = True
+        while event:
+            if (buttonstate == 0):
+                event = False
+
             curr_left = GPIO.input(leftIR)
             curr_middle = GPIO.input(middleIR)
             curr_right = GPIO.input(rightIR)
