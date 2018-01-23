@@ -13,21 +13,22 @@ buttonPin = 26
 buttonstate = 1
 started = False
 stop = False
-route = 3
+route = 1
+kruisingCount = 0
 
 robot = Robot()
 
 def kruispunt(route):
     if (route == 1):
         sleep(2)
-        for x in range(0, 300):
+        for x in range(0, 400):
             robot.linksaf()
     elif (route == 2):
         sleep(2)
         robot.rechtdoor()
     elif (route == 3):
         sleep(2)
-        for x in range(0, 300):
+        for x in range(0, 400):
             robot.rechtsaf()
     else:
         print "no route to host"
@@ -67,9 +68,10 @@ while not stop:
                 robot.scherprechts()
                 print "scherprechts"
             elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 0):
-                #stop = True
+                if (kruisingCount == 1):
+                    stop = True
                 kruispunt(route)
-                print "stop"
+                kruisingCount += 1
             else:
                 robot.rechtdoor()
 
