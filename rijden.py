@@ -36,8 +36,11 @@ while True:
             curr_left = GPIO.input(leftIR)
             curr_middle = GPIO.input(middleIR)
             curr_right = GPIO.input(rightIR)
+<<<<<<< HEAD
             if (buttonstate == 0):
                 started = False
+=======
+>>>>>>> 8d7b2be95336cdbcbbf9c0257dc2a1ebc13b0eb2
 
             if (curr_left == 1) and (curr_middle == 0) and (curr_right == 1):
                 robot.rechtdoor()
