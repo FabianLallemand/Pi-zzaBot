@@ -53,7 +53,7 @@ while not stop:
                 print "scherprechts"
             elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 0):
                 #stop = True
-                robot.kruispunt()
+                robot.kruispunt(route)
                 print "stop"
             else:
                 robot.rechtdoor()
