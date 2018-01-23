@@ -1,5 +1,4 @@
 import RPi.GPIO as GPIO
-from time import sleep
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -10,9 +9,10 @@ rightIR = 18
 
 class Sensor:
 
-    def setupsensor():
+    def setupsensor(self):
 
         print "setting up a sensor"
+
         GPIO.setup(leftIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
         GPIO.setup(middleIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
         GPIO.setup(rightIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
