@@ -32,6 +32,7 @@ while True:
     if (buttonstate == 0):
         print "start"
         event = True
+        sleep(2)
         while event:
             if (buttonstate == 0):
                 event = False
