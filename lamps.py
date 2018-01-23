@@ -20,3 +20,5 @@ finish = True
 discolight(finish)
 finish = False
 discolight(finish)
+
+GPIO.cleanup()
