@@ -11,7 +11,7 @@ rightIR = 18
 
 buttonPin = 26
 buttonstate = 1
-event = 1
+started = False
 
 robot = Robot()
 
@@ -28,13 +28,16 @@ GPIO.setup(rightIR,GPIO.IN) #GPIO 18 -> Right IR out
 while True:
 
     buttonstate = GPIO.input(buttonPin)
-
     if (buttonstate == 0):
         print "start"
-        while True:
+        started True
+        while started:
+            buttonstate = GPIO.input(buttonPin)
             curr_left = GPIO.input(leftIR)
             curr_middle = GPIO.input(middleIR)
             curr_right = GPIO.input(rightIR)
+            if (buttonstate == 0)
+                started = False
 
             if (curr_left == 1) and (curr_middle == 0) and (curr_right == 1):
                 robot.rechtdoor()
