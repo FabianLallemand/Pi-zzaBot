@@ -18,7 +18,13 @@ while True:
         print "start"
         started = True
         while started:
-            print "rijden"
-            robot.scherprechts()
+            for x in range (0, 1000)
+                robot.scherprechts()
+            for x in range (0, 500)
+                robot.linksaf()
+            for x in range (0, 1000)
+                robot.scherplinks()
+            for x in range (0, 500)
+                robot.rechtsaf()
 
 GPIO.cleanup()
