@@ -1,7 +1,6 @@
 import RPi.GPIO as GPIO
 from time import sleep
 from robot_class import Robot
-from robot_class import kruispunt
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
