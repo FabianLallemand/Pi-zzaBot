@@ -17,12 +17,12 @@ MotorL4 = 9
 def kruispunt(route):
     if (route == 1):
         for x in range(0, 100):
-            scherplinks()
+            robot.scherplinks()
     elif (route == 2):
-        rechtdoor()
+        robot.rechtdoor()
     elif (route == 3):
         for x in range(0, 100):
-            scherprechts()
+            robot.scherprechts()
     else:
         print "no route to host"
 
