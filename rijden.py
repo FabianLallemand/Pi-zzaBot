@@ -38,10 +38,7 @@ while not stop:
             curr_middle = GPIO.input(middleIR)
             curr_right = GPIO.input(rightIR)
 
-            if (curr_left == 1) and (curr_middle == 0) and (curr_right == 1):
-                robot.rechtdoor()
-                print "rechtdoor"
-            elif (curr_left == 0) and (curr_middle == 1) and (curr_right == 1):
+            if (curr_left == 0) and (curr_middle == 1) and (curr_right == 1):
                 robot.linksaf()
                 print "linksaf"
             elif (curr_left == 1) and (curr_middle == 1) and (curr_right == 0):
@@ -57,6 +54,8 @@ while not stop:
                 started = False
                 stop = True
                 print "stop"
+            else:
+                robot.rechtdoor()
 
     sleep(.2)
 
