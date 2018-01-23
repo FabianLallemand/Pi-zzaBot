@@ -18,13 +18,13 @@ while True:
         print "start"
         started = True
         while started:
-            for x in range (0, 1000):
+            for x in range (0, 500):
                 robot.scherprechts()
-            for x in range (0, 500):
+            for x in range (0, 250):
                 robot.linksaf()
-            for x in range (0, 1000):
-                robot.scherplinks()
             for x in range (0, 500):
+                robot.scherplinks()
+            for x in range (0, 250):
                 robot.rechtsaf()
 
 GPIO.cleanup()
