@@ -12,6 +12,7 @@ rightIR = 18
 buttonPin = 26
 buttonstate = 1
 started = False
+stop = False
 
 robot = Robot()
 
@@ -25,7 +26,7 @@ GPIO.setup(leftIR,GPIO.IN) #GPIO 14 -> Left IR out
 GPIO.setup(middleIR,GPIO.IN) #GPIO 15 -> middle IR out
 GPIO.setup(rightIR,GPIO.IN) #GPIO 18 -> Right IR out
 
-while True:
+while !stop:
 
     buttonstate = GPIO.input(buttonPin)
     if (buttonstate == 0):
@@ -39,16 +40,23 @@ while True:
 
             if (curr_left == 1) and (curr_middle == 0) and (curr_right == 1):
                 robot.rechtdoor()
+                print "rechtdoor"
             elif (curr_left == 0) and (curr_middle == 1) and (curr_right == 1):
                 robot.linksaf()
+                print "linksaf"
             elif (curr_left == 1) and (curr_middle == 1) and (curr_right == 0):
                 robot.rechtsaf()
+                print "rechtsaf"
             elif (curr_left == 1) and (curr_middle == 0) and (curr_right == 0):
                 robot.scherplinks()
+                print "scherplinks"
             elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 1):
                 robot.scherprechts()
+                print "scherprechts"
             elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 0):
                 started = False
+                stop = True
+                print "stop"
             else:
                 robot.rechtdoor()
 
