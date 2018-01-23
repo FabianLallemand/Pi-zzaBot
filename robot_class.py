@@ -366,3 +366,13 @@ class Robot:
         GPIO.output(MotorR3,0)
         GPIO.output(MotorR4,1)
         sleep(.001)
+    def kruispunt(route):
+        if (route == 1):
+            for x in range(0, 100):
+                scherplinks()
+        elif (route == 2):
+            rechtdoor()
+        elif (route == 3):
+            for x in range(0, 100):
+        else:
+            print "no route to host"

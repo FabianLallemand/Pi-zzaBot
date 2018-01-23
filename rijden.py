@@ -13,6 +13,7 @@ buttonPin = 26
 buttonstate = 1
 started = False
 stop = False
+route = 1
 
 robot = Robot()
 
@@ -51,8 +52,8 @@ while not stop:
                 robot.scherprechts()
                 print "scherprechts"
             elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 0):
-                started = False
-                stop = True
+                #stop = True
+                robot.kruispunt()
                 print "stop"
             else:
                 robot.rechtdoor()
