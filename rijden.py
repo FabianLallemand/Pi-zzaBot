@@ -68,10 +68,10 @@ while not stop:
                 robot.scherprechts()
                 print "scherprechts"
             elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 0):
+                kruispunt(route)
                 if (kruisingCount == 1):
                     started = False
                     stop = True
-                kruispunt(route)
                 kruisingCount += 1
             else:
                 robot.rechtdoor()
