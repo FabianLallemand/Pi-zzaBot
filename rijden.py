@@ -18,6 +18,18 @@ route = 1
 
 robot = Robot()
 
+def kruispunt(route):
+    if (route == 1):
+        for x in range(0, 100):
+            robot.scherplinks()
+    elif (route == 2):
+        robot.rechtdoor()
+    elif (route == 3):
+        for x in range(0, 100):
+            robot.scherprechts()
+    else:
+        print "no route to host"
+
 GPIO.setup(leftIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 GPIO.setup(middleIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 GPIO.setup(rightIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
