@@ -15,8 +15,10 @@ GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 while True:
     buttonstate = GPIO.input(buttonPin)
     if (buttonstate == 0):
+        print "start"
         started = True
         while started:
+            print "rijden"
             robot.rechtdoor
 
 GPIO.cleanup()
