@@ -57,8 +57,6 @@ while not stop:
                 started = False
                 stop = True
                 print "stop"
-            else:
-                robot.rechtdoor()
 
     sleep(.2)
 
