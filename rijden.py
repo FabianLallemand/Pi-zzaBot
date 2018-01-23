@@ -30,7 +30,7 @@ while True:
     buttonstate = GPIO.input(buttonPin)
 
     if (buttonstate == 0):
-        print "start"
+        print "start" #what
         while True:
             curr_left = GPIO.input(leftIR)
             curr_middle = GPIO.input(middleIR)
