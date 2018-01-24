@@ -16,7 +16,7 @@ buttonstate = 1
 started = False
 stop = False
 route = 1
-kruisingCount =
+kruisingCount = 0   
 
 robot = Robot()
 
