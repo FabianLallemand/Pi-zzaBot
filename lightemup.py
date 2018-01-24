@@ -6,6 +6,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(21,GPIO.OUT) #linker lichten
 GPIO.setup(20,GPIO.OUT) #worden de disco's
 GPIO.setup(16,GPIO.OUT) #rechter lichten
+GPIO.setup(26,GPIO.OUT)
 
 buttonPin = 26
 buttonstate = 1
