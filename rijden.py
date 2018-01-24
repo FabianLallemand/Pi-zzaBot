@@ -50,7 +50,7 @@ def kruispunt(route):
         for x in range(0, 150):
             robot.linksaf()
         while (GPIO.input(middleIR)):
-            robot.scherplinks
+            robot.scherplinks()
     elif (route == 2):
         sleep(2)
         robot.rechtdoor()
@@ -59,7 +59,7 @@ def kruispunt(route):
         for x in range(0, 150):
             robot.rechtsaf()
         while (GPIO.input(middleIR)):
-            robot.scherprechts
+            robot.scherprechts()
     else:
         print("no route to host")
 
