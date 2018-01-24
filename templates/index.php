@@ -17,7 +17,7 @@
       <p> Kies hieronder uw gewenste afleveradres: </p></br>
 
 
-<form action="/rijden" method="get">
+<form action="/rijden" method="post">
   <input type="number" name="route">
       <!--<div class="btn-group">
     <button type="button" class="btn btn-primary">Bestemming 1</button>
