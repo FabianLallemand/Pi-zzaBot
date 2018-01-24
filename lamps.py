@@ -2,9 +2,9 @@ import RPi.GPIO as GPIO
 from time import sleep
 from threading import Thread
 
-linkslamp = 20
+linkslamp = 21
 rechtslamp = 16
-discolamp = 21
+discolamp = 20
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
