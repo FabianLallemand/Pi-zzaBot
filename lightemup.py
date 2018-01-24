@@ -19,10 +19,11 @@ while not stop:
     if (buttonstate == 0):
         print "start"
         started = True
-        GPIO.output(21,True)
-        GPIO.output(16,True)
-        GPIO.output(20, True)
-        sleep(5)
-        stop = True
+        while started:
+            GPIO.output(21,True)
+            GPIO.output(16,True)
+            GPIO.output(20, True)
+            sleep(5)
+            started = False
 
 GPIO.cleanup
