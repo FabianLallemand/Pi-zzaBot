@@ -55,6 +55,7 @@ while not stop:
         started = True
         GPIO.output(21,True)
         GPIO.output(16,True)
+        GPIO.output(20, True)
         while started:
             buttonstate = GPIO.input(buttonPin)
             curr_left = GPIO.input(leftIR)
