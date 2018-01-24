@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 from time import sleep
 from robot_class import Robot
-import lamps
+from lamps import *
 from threading import Thread
 
 GPIO.setwarnings(False)
@@ -21,7 +21,9 @@ kruisingCount = 0
 robot = Robot()
 
 def kruispunt(route):
+    linksthread = knipper_links()
     if (route == 1):
+        linksthread.start()
         sleep(2)
         Thread(target=lamps.rechtsthread)
         for x in range(0, 450):
