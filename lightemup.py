@@ -7,9 +7,11 @@ GPIO.setup(21,GPIO.OUT) #linker lichten
 GPIO.setup(20,GPIO.OUT) #worden de disco's
 GPIO.setup(16,GPIO.OUT) #rechter lichten
 GPIO.setup(26,GPIO.OUT)
-GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 buttonPin = 26
+GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+
 buttonstate = 1
 stop = False
 
