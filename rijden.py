@@ -42,7 +42,7 @@ if __name__ == "__main__":
 
 route = form.getvalue('route')
 
-print (route)
+print(route)
 
 def kruispunt(route):
     if (route == 1):
