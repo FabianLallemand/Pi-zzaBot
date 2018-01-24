@@ -16,6 +16,7 @@ GPIO.setup(20,GPIO.OUT) #worden de disco's
 GPIO.setup(16,GPIO.OUT) #rechter lichten
 
 GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.add_event_detect(buttonPin, GPIO.RISING)
 
 while run:
     buttonstate = GPIO.input(buttonPin)
@@ -23,7 +24,6 @@ while run:
         print "start"
         started = True
         while started:
-            GPIO.add_event_detect(buttonPin, GPIO.RISING)
             for x in range (0, 1000):
                 robot.scherprechts()
                 GPIO.output(16,True)
