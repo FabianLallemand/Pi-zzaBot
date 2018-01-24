@@ -16,6 +16,16 @@ stop = False
 route = 1
 kruisingCount = 0
 
+MotorR1 = 2
+MotorR2 = 3
+MotorR3 = 4
+MotorR4 = 17
+
+MotorL1 = 27
+MotorL2 = 22
+MotorL3 = 10
+MotorL4 = 9
+
 robot = Robot()
 
 GPIO.setup(leftIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
