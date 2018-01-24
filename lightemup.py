@@ -25,5 +25,6 @@ while not stop:
             GPIO.output(20, True)
             sleep(5)
             started = False
+            stop = False
 
 GPIO.cleanup
