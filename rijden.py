@@ -40,14 +40,14 @@ if __name__ == "__main__":
 
 def kruispunt(route):
     if (route == 1):
-        lamps.knipper_links()
+        knipper_links()
         for x in range(0, 450):
             robot.linksaf()
     elif (route == 2):
         sleep(2)
         robot.rechtdoor()
     elif route == 3:
-        lamps.knipper_rechts()
+        knipper_rechts()
         for x in range(0, 450):
             robot.rechtsaf()
     else:
