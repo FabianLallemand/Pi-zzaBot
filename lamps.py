@@ -2,18 +2,22 @@ import RPi.GPIO as GPIO
 from time import sleep
 from threading import Thread
 
+linkslamp = 20
+rechtslamp = 16
+discolamp = 21
+
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(20,GPIO.OUT) #linker lichten
-GPIO.setup(21,GPIO.OUT) #worden de disco's
-GPIO.setup(16,GPIO.OUT) #rechter lichten
+GPIO.setup(linkslamp,GPIO.OUT) #linker lichten
+GPIO.setup(discolamp,GPIO.OUT) #worden de disco's
+GPIO.setup(rechtslamp,GPIO.OUT) #rechter lichten
 
 
 def discolight(finish):
     if finish == True:
-        GPIO.output(21,True)
+        GPIO.output(discolamp,True)
         sleep(5)
-        GPIO.output(21,False)
+        GPIO.output(discolamp,False)
         print("joepie")
     else:
         print("nog niet klaar of onbekend")
@@ -22,9 +26,9 @@ def discolight(finish):
 def knipper_links():
     steps = 0
     while steps < 9:
-        GPIO.output(20,False)
+        GPIO.output(linkslamp,False)
         sleep(0.3)
-        GPIO.output(20,True)
+        GPIO.output(linkslamp,True)
         sleep(0.3)
         steps += 1
 
@@ -32,9 +36,9 @@ def knipper_links():
 def knipper_rechts():
     steps = 0
     while steps < 9:
-        GPIO.output(16,False)
+        GPIO.output(rechtslamp,False)
         sleep(0.3)
-        GPIO.output(16,True)
+        GPIO.output(rechtslamp,True)
         sleep(0.3)
         steps += 1
 
