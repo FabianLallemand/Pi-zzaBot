@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<!- 
+	readevents.html
+	Shows button events
+	@author: Koen Warner (koen)
+	@version:  v1.1,  17 jun. 2014
+	(c) 2014 Koen Warner
+ -->
+ 
+<!- File reads button events from an event file and shows them on a web page -->
+<html>
+<head>
+<title>{{ title}}</title>
+</head>
+
+<body>
+	<img src="../static/image/hsl_logo.jpg" width="50" height="63" style="float: left">
+	<p>iarch practicum / Opleiding Informatica / Hogeschool Leiden</p>
+	
+	<br />	<h1>{{title}}</h1>
+	<h2>{{greetings}}</h2>
+	<p>Response: {{response}}</p>
+	<p><b>
+		Events:</b><br>
+	</p>
+	{% for event in lines %}
+			{{ event }} <br>
+	{% endfor %}
+	
+	<p>Number of events: {{number_events}}
+	<br />
+	<a href="/">Home</a>
+	<h5>Current date and time are: {{ time }}</h5>
+</body>
+</html>
