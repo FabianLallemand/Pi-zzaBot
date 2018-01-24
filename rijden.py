@@ -3,7 +3,9 @@ from time import sleep
 from robot_class import Robot
 from lamps import *
 from threading import Thread
-import lamps
+from flask import Flask, render_template
+import datetime
+import os
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -20,6 +22,21 @@ route = 1
 kruisingCount = 0
 
 robot = Robot()
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+	now = datetime.datetime.now()
+	timeString = now.strftime("%Y-%m-%d %H:%M")
+	templateData = {
+		'title' : "Button Events",
+		'time' : timeString
+	}
+	return render_template('index.php', **templateData)
+
+if __name__ == "__main__":
+	# have the local host server listen on port 80, and report any errors
+	app.run(host='0.0.0.0', port=8085, debug=True)
 
 def kruispunt(route):
     if (route == 1):
