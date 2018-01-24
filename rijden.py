@@ -22,7 +22,6 @@ kruisingCount = 0
 robot = Robot()
 
 def kruispunt(route):
-    linksthread = knipper_links()
     if (route == 1):
         sleep(2)
         Thread(target=lamps.knipper_links())
