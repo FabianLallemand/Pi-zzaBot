@@ -22,6 +22,7 @@ buttonstate = 1
 started = False
 stop = False
 kruisingCount = 0
+route = 0
 
 robot = Robot()
 app = Flask(__name__)
