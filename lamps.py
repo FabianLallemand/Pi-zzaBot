@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 from time import sleep
+from threading import Thread
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -37,6 +38,9 @@ def knipper_rechts():
         sleep(0.3)
         steps += 1
 
+
+rechtsthread = Thread(target=knipper_rechts(), args=[])
+linksthread = Thread(target=knipper_links(), args=[])
 
 finish = True
 discolight(finish)

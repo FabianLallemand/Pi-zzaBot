@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 from time import sleep
 from robot_class import Robot
+import lamps
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -22,6 +23,7 @@ def kruispunt(route):
     if (route == 1):
         sleep(2)
         for x in range(0, 450):
+            lamps.linksthread
             robot.linksaf()
     elif (route == 2):
         sleep(2)
@@ -29,9 +31,10 @@ def kruispunt(route):
     elif (route == 3):
         sleep(2)
         for x in range(0, 450):
+            lamps.rechtsthread
             robot.rechtsaf()
-    else:
-        print "no route to host"
+        else:
+            print("no route to host")
 
 GPIO.setup(leftIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 GPIO.setup(middleIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
@@ -51,7 +54,7 @@ while not stop:
 
     buttonstate = GPIO.input(buttonPin)
     if (buttonstate == 0):
-        print "start"
+        print("start")
         started = True
         GPIO.output(21,True)
         GPIO.output(16,True)
@@ -63,16 +66,16 @@ while not stop:
 
             if (curr_left == 0) and (curr_middle == 0) and (curr_right == 1):
                 robot.linksaf()
-                print "linksaf"
+                print("linksaf")
             elif (curr_left == 1) and (curr_middle == 0) and (curr_right == 0):
                 robot.rechtsaf()
-                print "rechtsaf"
+                print("rechtsaf")
             elif (curr_left == 0) and (curr_middle == 1) and (curr_right == 1):
                 robot.scherplinks()
-                print "scherplinks"
+                print("scherplinks")
             elif (curr_left == 1) and (curr_middle == 1) and (curr_right == 0):
                 robot.scherprechts()
-                print "scherprechts"
+                print("scherprechts")
             elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 0):
                 if (kruisingCount == 1):
                     started = False
