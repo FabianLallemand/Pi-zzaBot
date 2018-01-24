@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 from time import sleep
 from robot_class import Robot
 import lamps
+from threading import Thread
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -23,7 +24,7 @@ def kruispunt(route):
     if (route == 1):
         sleep(2)
         for x in range(0, 450):
-            lamps.linksthread
+            Thread(target=lamps.knipper_links(), args=[])
             robot.linksaf()
     elif (route == 2):
         sleep(2)
@@ -31,7 +32,7 @@ def kruispunt(route):
     elif (route == 3):
         sleep(2)
         for x in range(0, 450):
-            lamps.rechtsthread
+            Thread(target=lamps.knipper_rechts(), args=[])
             robot.rechtsaf()
     else:
         print("no route to host")

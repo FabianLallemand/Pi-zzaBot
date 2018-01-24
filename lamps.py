@@ -39,12 +39,3 @@ def knipper_rechts():
         steps += 1
 
 
-rechtsthread = Thread(target=knipper_rechts(), args=[])
-linksthread = Thread(target=knipper_links(), args=[])
-
-finish = True
-discolight(finish)
-finish = False
-discolight(finish)
-
-GPIO.cleanup()
