@@ -39,3 +39,5 @@ def knipper_rechts():
         steps += 1
 
 
+rechtsthread = knipper_rechts()
+linksthread = knipper_links()
