@@ -3,7 +3,9 @@ from time import sleep
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(21,GPIO.OUT)
+GPIO.setup(21,GPIO.OUT) #linker lichten
+GPIO.setup(20,GPIO.OUT) #worden de disco's
+GPIO.setup(16,GPIO.OUT) #rechter lichten
 
 def discolight(finish):
     if finish == True:
@@ -18,3 +20,5 @@ finish = True
 discolight(finish)
 finish = False
 discolight(finish)
+
+GPIO.cleanup()

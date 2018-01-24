@@ -13,12 +13,33 @@ buttonPin = 26
 buttonstate = 1
 started = False
 stop = False
+route = 1
+kruisingCount = 0
 
 robot = Robot()
+
+def kruispunt(route):
+    if (route == 1):
+        sleep(2)
+        for x in range(0, 450):
+            robot.linksaf()
+    elif (route == 2):
+        sleep(2)
+        robot.rechtdoor()
+    elif (route == 3):
+        sleep(2)
+        for x in range(0, 450):
+            robot.rechtsaf()
+    else:
+        print "no route to host"
 
 GPIO.setup(leftIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 GPIO.setup(middleIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 GPIO.setup(rightIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
+
+GPIO.setup(21,GPIO.OUT) #linker lichten
+GPIO.setup(20,GPIO.OUT) #worden de disco's
+GPIO.setup(16,GPIO.OUT) #rechter lichten
 
 GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
@@ -32,6 +53,9 @@ while not stop:
     if (buttonstate == 0):
         print "start"
         started = True
+        GPIO.output(21,True)
+        GPIO.output(16,True)
+        GPIO.output(20, True)
         while started:
             buttonstate = GPIO.input(buttonPin)
             curr_left = GPIO.input(leftIR)
@@ -51,9 +75,12 @@ while not stop:
                 robot.scherprechts()
                 print "scherprechts"
             elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 0):
-                started = False
-                stop = True
-                print "stop"
+                if (kruisingCount == 1):
+                    started = False
+                    stop = True
+                else:
+                    kruispunt(route)
+                    kruisingCount += 1
             else:
                 robot.rechtdoor()
 
