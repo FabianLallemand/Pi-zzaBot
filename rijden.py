@@ -43,7 +43,7 @@ def home():
 if __name__ == "__main__":
 	# have the local host server listen on port 80, and report any errors
 	app.run(host='0.0.0.0', port=8085, debug=True)
-    route = getData()
+        route = getData()
 
 print(route)
 
