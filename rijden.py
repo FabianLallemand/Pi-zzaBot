@@ -23,16 +23,14 @@ robot = Robot()
 
 def kruispunt(route):
     if (route == 1):
-        Thread(target=lamps.knipper_links())
-        sleep(2)
+        lamps.knipper_links()
         for x in range(0, 450):
             robot.linksaf()
     elif (route == 2):
         sleep(2)
         robot.rechtdoor()
     elif route == 3:
-        Thread(target=lamps.knipper_rechts())
-        sleep(2)
+        lamps.knipper_rechts()
         for x in range(0, 450):
             robot.rechtsaf()
     else:
