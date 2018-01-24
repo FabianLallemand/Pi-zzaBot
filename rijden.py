@@ -20,7 +20,7 @@ buttonstate = 1
 started = False
 stop = False
 kruisingCount = 0
-route = 3
+#route = 3
 
 form = cgi.FieldStorage()
 route = form.getvalue('route')
