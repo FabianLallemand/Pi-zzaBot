@@ -31,5 +31,6 @@ while not stop:
             GPIO.output(20,False)
             GPIO.output(16,False)
             buttonstate = 1
+            started = False
 
 GPIO.cleanup
