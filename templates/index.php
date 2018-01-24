@@ -18,7 +18,7 @@
 
 
 <form action="rijden.py">
-  <input type="text" name="route">
+  <input type="number" name="route">
       <!--<div class="btn-group">
     <button type="button" class="btn btn-primary">Bestemming 1</button>
     <button type="button" class="btn btn-primary">Bestemming 2</button>
