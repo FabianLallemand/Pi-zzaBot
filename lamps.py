@@ -41,7 +41,3 @@ def knipper_rechts():
         GPIO.output(rechtslamp,True)
         sleep(0.3)
         steps += 1
-
-
-rechtsthread = knipper_rechts()
-linksthread = knipper_links()

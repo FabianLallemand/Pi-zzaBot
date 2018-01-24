@@ -85,7 +85,6 @@ while not stop:
                     stop = True
                 else:
                     kruispunt(route)
-                    Thread._stop()
                     kruisingCount += 1
             else:
                 robot.rechtdoor()
