@@ -408,6 +408,12 @@ while not stop:
         elif (curr_left == 1) and (curr_middle == 0) and (curr_right == 0):
             robot.rechtsaf()
             print "rechtsaf"
+        elif (curr_left == 1) and (curr_middle == 1) and (curr_right == 0):
+            robot.scherprechts()
+            print "scherprechts"
+        elif (curr_left == 0) and (curr_middle == 1) and (curr_right == 1):
+            robot.scherplinks()
+            print "scherplinks"
         else:
             robot.rechtdoor()
             print "rechtdoor"
