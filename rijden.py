@@ -32,7 +32,7 @@ def home():
 		'title' : "Button Events",
 		'time' : timeString
 	}
-	return render_template('index.php', **templateData)
+	return render_template('UI/RC/index.php', **templateData)
 
 if __name__ == "__main__":
 	# have the local host server listen on port 80, and report any errors
