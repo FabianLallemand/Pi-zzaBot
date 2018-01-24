@@ -25,7 +25,7 @@ def discolight(finish):
 
 def knipper_links():
     steps = 0
-    while steps < 9:
+    while steps < 4:
         GPIO.output(linkslamp,False)
         sleep(0.3)
         GPIO.output(linkslamp,True)
@@ -35,7 +35,7 @@ def knipper_links():
 
 def knipper_rechts():
     steps = 0
-    while steps < 9:
+    while steps < 4:
         GPIO.output(rechtslamp,False)
         sleep(0.3)
         GPIO.output(rechtslamp,True)
