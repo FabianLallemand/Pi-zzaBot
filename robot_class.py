@@ -15,15 +15,15 @@ MotorL3 = 4
 MotorL4 = 17
 
 class Robot:
-    GPIO.setup(MotorR1,GPIO.OUT) #GPIO 2  -> Motor rechts A
-    GPIO.setup(MotorR2,GPIO.OUT) #GPIO 3  -> Motor rechts B
-    GPIO.setup(MotorR3,GPIO.OUT) #GPIO 4  -> Motor rechts C
-    GPIO.setup(MotorR4,GPIO.OUT) #GPIO 17 -> Motor rechts D
+    GPIO.setup(MotorL1,GPIO.OUT) #GPIO 2  -> Motor rechts A
+    GPIO.setup(MotorL2,GPIO.OUT) #GPIO 3  -> Motor rechts B
+    GPIO.setup(MotorL3,GPIO.OUT) #GPIO 4  -> Motor rechts C
+    GPIO.setup(MotorL4,GPIO.OUT) #GPIO 17 -> Motor rechts D
 
-    GPIO.setup(MotorL1,GPIO.OUT) #GPIO 27 -> Motor Left A
-    GPIO.setup(MotorL2,GPIO.OUT) #GPIO 22 -> Motor Left B
-    GPIO.setup(MotorL3,GPIO.OUT) #GPIO 10 -> Motor Left C
-    GPIO.setup(MotorL4,GPIO.OUT) #GPIO 9  -> Motor Left D
+    GPIO.setup(MotorR1,GPIO.OUT) #GPIO 27 -> Motor Left A
+    GPIO.setup(MotorR2,GPIO.OUT) #GPIO 22 -> Motor Left B
+    GPIO.setup(MotorR3,GPIO.OUT) #GPIO 10 -> Motor Left C
+    GPIO.setup(MotorR4,GPIO.OUT) #GPIO 9  -> Motor Left D
 
     def rechtdoor(self):
         GPIO.output(MotorR1,0)
