@@ -22,7 +22,6 @@ buttonstate = 1
 started = False
 stop = False
 route = form.getvalue('route')
-print (route)
 kruisingCount = 0
 
 robot = Robot()
@@ -41,6 +40,8 @@ def home():
 if __name__ == "__main__":
 	# have the local host server listen on port 80, and report any errors
 	app.run(host='0.0.0.0', port=8085, debug=True)
+
+print (route)
 
 def kruispunt(route):
     if (route == 1):
