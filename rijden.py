@@ -3,6 +3,7 @@ from time import sleep
 from robot_class import Robot
 from lamps import *
 from threading import Thread
+import lamps
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -25,7 +26,7 @@ def kruispunt(route):
     if (route == 1):
         linksthread.start()
         sleep(2)
-        Thread(target=lamps.rechtsthread)
+        Thread(target=lamps.knipper_links())
         for x in range(0, 450):
             robot.linksaf()
     elif (route == 2):
@@ -33,7 +34,7 @@ def kruispunt(route):
         robot.rechtdoor()
     elif route == 3:
         sleep(2)
-        Thread(target=lamps.linksthread)
+        Thread(target=lamps.knipper_links())
         for x in range(0, 450):
             robot.rechtsaf()
     else:
