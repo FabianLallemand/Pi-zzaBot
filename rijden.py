@@ -6,6 +6,9 @@ from threading import Thread
 from flask import Flask, render_template
 import datetime
 import os
+import cgi
+
+form = cgi.FieldStorage()
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -18,7 +21,7 @@ buttonPin = 26
 buttonstate = 1
 started = False
 stop = False
-route = 1
+route = form.getvalue('route')
 kruisingCount = 0
 
 robot = Robot()
