@@ -25,20 +25,20 @@ while run:
         started = True
         while started:
             for x in range (0, 1000):
-                robot.scherprechts()
-                GPIO.output(16,True)
+                robot.scherprechts() #links vooruit, rechts achteruit
+                GPIO.output(16,True) #rechts ook vooruit
                 GPIO.output(21,False)
             for x in range (0, 1000):
-                robot.linksaf()
-                GPIO.output(21,True)
+                robot.linksaf() #links stil, rechts vooruit
+                GPIO.output(21,True) #rechts achteruit
                 GPIO.output(16,False)
             for x in range (0, 1000):
-                robot.scherplinks()
-                GPIO.output(16,True)
+                robot.scherplinks() #links achteruit, rechts vooruit
+                GPIO.output(16,True) #rechts achteruit
                 GPIO.output(21,False)
             for x in range (0, 1000):
-                robot.rechtsaf()
-                GPIO.output(21,True)
+                robot.rechtsaf() #links vooruit, rechts stil
+                GPIO.output(21,True) #rechts vooruit, linksstil
                 GPIO.output(16,False)
             if(GPIO.event_detected(buttonPin)):
                 started = False

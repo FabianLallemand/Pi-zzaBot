@@ -4,26 +4,26 @@ from time import sleep
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
-MotorR1 = 27
-MotorR2 = 22
-MotorR3 = 10
-MotorR4 = 9
+MotorR1 = 2
+MotorR2 = 3
+MotorR3 = 4
+MotorR4 = 17
 
-MotorL1 = 2
-MotorL2 = 3
-MotorL3 = 4
-MotorL4 = 17
+MotorL1 = 27
+MotorL2 = 22
+MotorL3 = 10
+MotorL4 = 9
 
 class Robot:
-    GPIO.setup(MotorL1,GPIO.OUT) #GPIO 2  -> Motor rechts A
-    GPIO.setup(MotorL2,GPIO.OUT) #GPIO 3  -> Motor rechts B
-    GPIO.setup(MotorL3,GPIO.OUT) #GPIO 4  -> Motor rechts C
-    GPIO.setup(MotorL4,GPIO.OUT) #GPIO 17 -> Motor rechts D
+    GPIO.setup(MotorR1,GPIO.OUT) #GPIO 2  -> Motor rechts A
+    GPIO.setup(MotorR2,GPIO.OUT) #GPIO 3  -> Motor rechts B
+    GPIO.setup(MotorR3,GPIO.OUT) #GPIO 4  -> Motor rechts C
+    GPIO.setup(MotorR4,GPIO.OUT) #GPIO 17 -> Motor rechts D
 
-    GPIO.setup(MotorR1,GPIO.OUT) #GPIO 27 -> Motor Left A
-    GPIO.setup(MotorR2,GPIO.OUT) #GPIO 22 -> Motor Left B
-    GPIO.setup(MotorR3,GPIO.OUT) #GPIO 10 -> Motor Left C
-    GPIO.setup(MotorR4,GPIO.OUT) #GPIO 9  -> Motor Left D
+    GPIO.setup(MotorL1,GPIO.OUT) #GPIO 27 -> Motor Left A
+    GPIO.setup(MotorL2,GPIO.OUT) #GPIO 22 -> Motor Left B
+    GPIO.setup(MotorL3,GPIO.OUT) #GPIO 10 -> Motor Left C
+    GPIO.setup(MotorL4,GPIO.OUT) #GPIO 9  -> Motor Left D
 
     def rechtdoor(self):
         GPIO.output(MotorR1,0)
