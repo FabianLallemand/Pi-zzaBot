@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 from time import sleep
 from robot_class import Robot
-import lamps
+from lamps import *
 from threading import Thread
 
 GPIO.setwarnings(False)
