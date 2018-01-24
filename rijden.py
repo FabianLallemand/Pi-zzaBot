@@ -37,9 +37,9 @@ GPIO.setup(leftIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 GPIO.setup(middleIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 GPIO.setup(rightIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 
-GPIO.setup(21,GPIO.OUT)
-GPIO.setup(20,GPIO.OUT) #links
-GPIO.setup(16,GPIO.OUT) #rechst
+GPIO.setup(21,GPIO.OUT) #linker lichten
+GPIO.setup(20,GPIO.OUT) #worden de disco's
+GPIO.setup(16,GPIO.OUT) #rechter lichten
 
 GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 

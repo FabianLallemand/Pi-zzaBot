@@ -9,22 +9,39 @@ robot = Robot()
 buttonPin = 26
 buttonstate = 1
 started = False
+run = True
+
+GPIO.setup(21,GPIO.OUT) #linker lichten
+GPIO.setup(20,GPIO.OUT) #worden de disco's
+GPIO.setup(16,GPIO.OUT) #rechter lichten
 
 GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-while True:
+while run:
     buttonstate = GPIO.input(buttonPin)
     if (buttonstate == 0):
         print "start"
         started = True
         while started:
-            for x in range (0, 500):
+            GPIO.add_event_detect(buttonPin, GPIO.RISING)
+            for x in range (0, 1000):
                 robot.scherprechts()
-            for x in range (0, 250):
+                GPIO.output(16,True)
+                GPIO.output(21,False)
+            for x in range (0, 1000):
                 robot.linksaf()
-            for x in range (0, 500):
+                GPIO.output(21,True)
+                GPIO.output(16,False)
+            for x in range (0, 1000):
                 robot.scherplinks()
-            for x in range (0, 250):
+                GPIO.output(16,True)
+                GPIO.output(21,False)
+            for x in range (0, 1000):
                 robot.rechtsaf()
+                GPIO.output(21,True)
+                GPIO.output(16,False)
+            if(GPIO.event_detected(buttonPin)):
+                started = False
+
 
 GPIO.cleanup()
