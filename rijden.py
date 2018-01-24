@@ -16,15 +16,16 @@ buttonstate = 1
 started = False
 stop = False
 route = 1
-kruisingCount = 0   
+kruisingCount = 0
 
 robot = Robot()
 
 def kruispunt(route):
+    linksthread = knipper_links()
     if (route == 1):
+        linksthread.start()
         sleep(2)
         for x in range(0, 450):
-            Thread(target=lamps.knipper_links(), args=[])
             robot.linksaf()
     elif (route == 2):
         sleep(2)
