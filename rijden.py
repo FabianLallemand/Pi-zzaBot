@@ -22,7 +22,7 @@ buttonstate = 1
 started = False
 stop = False
 route = form.getvalue('route')
-print route
+print (route)
 kruisingCount = 0
 
 robot = Robot()
