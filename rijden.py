@@ -53,7 +53,7 @@ while not stop:
     if (buttonstate == 0):
         print "start"
         started = True
-        GPIO.output(20,True)
+        GPIO.output(21,True)
         GPIO.output(16,True)
         while started:
             buttonstate = GPIO.input(buttonPin)
