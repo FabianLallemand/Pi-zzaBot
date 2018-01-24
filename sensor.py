@@ -9,6 +9,9 @@ rightIR = 18
 
 class Sensor:
 
+    GP = 0
+    IO = 0
+
     def setupsensor(self):
 
         print "setting up a sensor"
@@ -20,3 +23,7 @@ class Sensor:
         GPIO.setup(leftIR,GPIO.IN) #GPIO 14 -> Left IR out
         GPIO.setup(middleIR,GPIO.IN) #GPIO 15 -> middle IR out
         GPIO.setup(rightIR,GPIO.IN) #GPIO 18 -> Right IR out
+
+    def Sensor(GP, IO):
+        this.GP = GP
+        this.IO = IO

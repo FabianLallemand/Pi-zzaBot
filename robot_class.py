@@ -4,15 +4,15 @@ from time import sleep
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
-MotorR1 = 2
-MotorR2 = 3
-MotorR3 = 4
-MotorR4 = 17
+MotorR1 = 27
+MotorR2 = 22
+MotorR3 = 10
+MotorR4 = 9
 
-MotorL1 = 27
-MotorL2 = 22
-MotorL3 = 10
-MotorL4 = 9
+MotorL1 = 2
+MotorL2 = 3
+MotorL3 = 4
+MotorL4 = 17
 
 class Robot:
     GPIO.setup(MotorR1,GPIO.OUT) #GPIO 2  -> Motor rechts A
