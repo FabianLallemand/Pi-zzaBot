@@ -385,22 +385,21 @@ def scherprechts(self):
     sleep(.0008)
 
 while not stop:
-        GPIO.output(21,True)
-        GPIO.output(16,True)
-        while True:
-            buttonstate = GPIO.input(buttonPin)
-            curr_left = GPIO.input(leftIR)
-            curr_middle = GPIO.input(middleIR)
-            curr_right = GPIO.input(rightIR)
-
-            if (curr_left == 0) and (curr_middle == 0) and (curr_right == 1):
-                robot.linksaf()
-                print "linksaf"
-            elif (curr_left == 1) and (curr_middle == 0) and (curr_right == 0):
-                robot.rechtsaf()
-                print "rechtsaf"
-            else:
-                robot.rechtdoor()
+    GPIO.output(21,True)
+    GPIO.output(16,True)
+    while True:
+        buttonstate = GPIO.input(buttonPin)
+        curr_left = GPIO.input(leftIR)
+        curr_middle = GPIO.input(middleIR)
+        curr_right = GPIO.input(rightIR)
+        if (curr_left == 0) and (curr_middle == 0) and (curr_right == 1):
+            robot.linksaf()
+            print "linksaf"
+        elif (curr_left == 1) and (curr_middle == 0) and (curr_right == 0):
+            robot.rechtsaf()
+            print "rechtsaf"
+        else:
+            robot.rechtdoor()
 
     sleep(.2)
 
