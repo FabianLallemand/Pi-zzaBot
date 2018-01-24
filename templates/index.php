@@ -17,7 +17,7 @@
       <p> Kies hieronder uw gewenste afleveradres: </p></br>
 
 
-<form action="rijden.py" method="post">
+<form action="rijden.py" method="get">
   <input type="number" name="route">
       <!--<div class="btn-group">
     <button type="button" class="btn btn-primary">Bestemming 1</button>
