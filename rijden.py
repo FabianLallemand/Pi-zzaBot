@@ -8,8 +8,6 @@ import datetime
 import os
 import cgi
 
-form = cgi.FieldStorage()
-
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
@@ -23,6 +21,11 @@ started = False
 stop = False
 kruisingCount = 0
 route = 0
+
+def getData():
+    form = cgi.FieldStorage()
+    route = form.getvalue('route')
+    return route
 
 robot = Robot()
 app = Flask(__name__)
@@ -40,8 +43,7 @@ def home():
 if __name__ == "__main__":
 	# have the local host server listen on port 80, and report any errors
 	app.run(host='0.0.0.0', port=8085, debug=True)
-
-route = form.getvalue('route')
+    route = getData()
 
 print(route)
 
