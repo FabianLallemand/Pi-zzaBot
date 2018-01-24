@@ -410,7 +410,7 @@ while not stop:
             print "rechtsaf"
         else:
             robot.rechtdoor()
-
+            print "rechtdoor"
     sleep(.2)
 
 
