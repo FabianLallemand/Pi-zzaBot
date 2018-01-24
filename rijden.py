@@ -15,7 +15,7 @@ buttonstate = 1
 started = False
 stop = False
 route = 1
-kruisingCount = 0
+kruisingCount =
 
 robot = Robot()
 
@@ -33,8 +33,8 @@ def kruispunt(route):
         for x in range(0, 450):
             lamps.rechtsthread
             robot.rechtsaf()
-        else:
-            print("no route to host")
+    else:
+        print("no route to host")
 
 GPIO.setup(leftIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 GPIO.setup(middleIR,GPIO.IN,pull_up_down=GPIO.PUD_UP)
