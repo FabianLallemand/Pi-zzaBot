@@ -5,9 +5,9 @@ from robot_class import Robot
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
-leftIR = 18
+leftIR = 14
 middleIR = 15
-rightIR = 14
+rightIR = 18
 
 buttonPin = 26
 buttonstate = 1
