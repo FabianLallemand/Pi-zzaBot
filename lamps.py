@@ -10,7 +10,7 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(linkslamp,GPIO.OUT) #linker lichten
 GPIO.setup(discolamp,GPIO.OUT) #worden de disco's
-GPIO.setup(rechtslamp,GPIO.OUT) #rechter lichtens
+GPIO.setup(rechtslamp,GPIO.OUT) #rechter lichten
 
 def discolight(finish): # Deze def zorgt ervoor dat aan het einde van de rit de disco lampjes aan gaan.
 
