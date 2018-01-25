@@ -20,7 +20,7 @@
 
       <!-- Picture of the Power button -->
 <form action="power.php" method="POST">
-      <input type="submit" name="route" value="1" id="power" class="button"></br></br>
+      <input type="submit" name="start" value="1" id="power" class="button"></br></br>
 </form>
     </div>
   </div>

@@ -13,4 +13,3 @@ file_put_contents($file, $route);
 header("Location: run.php");
 
  ?>
-?>

@@ -18,7 +18,7 @@ stop = False
 kruisingCount = 0
 route = 0
 draaitijdcount = 0
-startknop = 0
+start = 0
 
 print(route)
 
@@ -60,14 +60,14 @@ GPIO.setup(rightIR,GPIO.IN) #GPIO 18 -> Right IR out
 
 while not stop:
 
-    file = open("start.txt", "r")   # Open en lees de inhoud van het bestand waar de route in staat.
-    startknop = file.read()
+'''    file = open("start.txt", "r")   # Open en lees de inhoud van het bestand waar de route in staat.
+    start = file.read()
     file.close()
 
-    startknop = int(startknop)
+    start = int(start)'''
 
     buttonstate = GPIO.input(buttonPin)
-    if (buttonstate == 0 or startknop == 1):          # Er wordt hier gekeken of de startbutton is ingedrukt of niet.
+    if (buttonstate == 0 or start == 1):          # Er wordt hier gekeken of de startbutton is ingedrukt of niet.
 
 
         file = open("direction.txt", "r")   # Open en lees de inhoud van het bestand waar de route in staat.
