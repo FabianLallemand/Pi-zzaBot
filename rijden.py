@@ -63,8 +63,7 @@ while not stop:
     if (buttonstate == 0):          # Er wordt hier gekeken of de startbutton is ingedrukt of niet.
 
 
-        # We commentaiereren nog meer
-        file = open("direction.txt", "r")
+        file = open("direction.txt", "r")   # Open en lees de inhoud van het bestand waar de route in staat.
         route = file.read()
         file.close()
 
@@ -76,7 +75,6 @@ while not stop:
         started = True
         GPIO.output(21,True)
         GPIO.output(16,True)
-        GPIO.output(20, True)
         while started:
             buttonstate = GPIO.input(buttonPin)
             curr_left = GPIO.input(leftIR)
@@ -98,7 +96,7 @@ while not stop:
                 for x in range(0, 20):
                     robot.scherprechts()
             elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 0):
-                if (kruisingCount == 1):    # Hier wordt gekeken of 'C.R.E.A.M. Pi' al een keer over een kruispunt gereden is.
+                if (kruisingCount == 1):    # Hier wordt gekeken of 'Creamy' al een keer over een kruispunt gereden is.
                     started = False
                     stop = True
                     discolight()
