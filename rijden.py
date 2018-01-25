@@ -68,22 +68,22 @@ while not stop:
             curr_middle = GPIO.input(middleIR)
             curr_right = GPIO.input(rightIR)
 
-            if (curr_left == 0) and (curr_middle == 0) and (curr_right == 1):
-                while not curr_middle:
-                    curr_middle = GPIO.input(middleIR)
-                    robot.linksaf()
-                    print("linksaf")
+            if (curr_left == 0) and (curr_middle == 0) and (curr_right == 1):        
+                robot.linksaf()
+                print("linksaf")
             elif (curr_left == 1) and (curr_middle == 0) and (curr_right == 0):
+                robot.rechtsaf()
+                print("rechtsaf")
+            elif (curr_left == 0) and (curr_middle == 1) and (curr_right == 1):
                 while not curr_middle:
                     curr_middle = GPIO.input(middleIR)
-                    robot.rechtsaf()
-                    print("rechtsaf")
-            elif (curr_left == 0) and (curr_middle == 1) and (curr_right == 1):
-                robot.scherplinks()
-                print("scherplinks")
+                    robot.scherplinks()
+                    print("scherplinks")
             elif (curr_left == 1) and (curr_middle == 1) and (curr_right == 0):
-                robot.scherprechts()
-                print("scherprechts")
+                while not curr_middle:
+                    curr_middle = GPIO.input(middleIR)
+                    robot.scherprechts()
+                    print("scherprechts")
             elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 0):
                 if (kruisingCount == 1):
                     started = False
