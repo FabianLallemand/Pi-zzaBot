@@ -16,6 +16,7 @@ started = False
 stop = False
 kruisingCount = 0
 route = 3
+draaitijdcount = 0
 
 
 robot = Robot()
@@ -75,15 +76,15 @@ while not stop:
                 robot.rechtsaf()
                 print("rechtsaf")
             elif (curr_left == 0) and (curr_middle == 1) and (curr_right == 1):
-                while curr_middle:
+                print("scherplinks")
+                while curr_middle and (draaitijdcou < 50):
                     curr_middle = GPIO.input(middleIR)
                     robot.scherplinks()
-                    print("scherplinks")
             elif (curr_left == 1) and (curr_middle == 1) and (curr_right == 0):
+                print("scherprechts")
                 while curr_middle:
                     curr_middle = GPIO.input(middleIR)
                     robot.scherprechts()
-                    print("scherprechts")
             elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 0):
                 if (kruisingCount == 1):
                     started = False
