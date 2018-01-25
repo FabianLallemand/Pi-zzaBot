@@ -17,7 +17,9 @@
         </br>
       <h1 style="text-shadow: 2.5px 2.5px 2px #888888;">C.R.E.A.M. Remote Control</h1></br>
       <h2> Uw Bestelling gaat nu onderweg! </h2></br></br>
-
+    <!--  <form action="power.php" method="POST">-->
+            <a href="index.php"><input type="submit" name="route" id="return" class="button"></a></br></br>
+    <!--  </form> -->
 <!-- Form that sends code to the post.php script -->
     </div>
   </div>
