@@ -2,11 +2,6 @@ import RPi.GPIO as GPIO
 from time import sleep
 from robot_class import Robot
 from lamps import *
-from threading import Thread
-from flask import Flask, render_template, request, url_for, redirect
-import datetime
-import os
-import cgi
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -20,43 +15,10 @@ buttonstate = 1
 started = False
 stop = False
 kruisingCount = 0
-#route = 3
+route = 3
 
-form = cgi.FieldStorage()
-route = form.getvalue('route')
 
 robot = Robot()
-app = Flask(__name__)
-
-@app.route("/")
-def home():
-	now = datetime.datetime.now()
-	timeString = now.strftime("%Y-%m-%d %H:%M")
-	templateData = {
-		'title' : "Button Events",
-		'time' : timeString
-	}
-	return render_template('index.php', **templateData)
-
-@app.route('/rijden', methods=['GET', 'POST'])
-def rijden():
-    if request.method == 'POST':
-        # do stuff when the form is submitted
-
-        # redirect to end the POST handling
-        # the redirect can be to the same route or somewhere else
-        return redirect(url_for('home'))
-
-    # show the form, it wasn't submitted
-    return render_template('rijden.py')
-
-if __name__ == "__main__":
-	# have the local host server listen on port 80, and report any errors
-    app.run(host='0.0.0.0', port=8085, debug=True)
-
-
-
-print(route)
 
 def kruispunt(route):
     if (route == 1):
