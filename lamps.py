@@ -17,9 +17,8 @@ def discolight(): # Deze def zorgt ervoor dat aan het einde van de rit de disco 
     GPIO.output(discolamp,True)
     knipper_rechts()
     knipper_links()
-    sleep(30)
+    sleep(10)
     GPIO.output(discolamp,False)
-    print("PIZZA IS HERE, LETS GET THIS PARTY STARTED")
 
 def knipper_links():    # Deze def zorgt ervoor dat de linker lampjes gaan knipperen.
 

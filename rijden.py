@@ -34,7 +34,8 @@ def kruispunt(route):   # In deze collectie van if statements wordt er gekeken w
             robot.scherplinks()
     elif (route == 2):          # 2 staat voor rechtdoor.
         sleep(2)
-        robot.rechtdoor()
+        for x in range(0, 150):
+            robot.rechtdoor()
     elif (route == 3):          # 3 staat voor rechts.
         knipper_rechts()
         for x in range(0, 150):
@@ -60,11 +61,11 @@ GPIO.setup(rightIR,GPIO.IN) #GPIO 18 -> Right IR out
 
 while not stop:
 
-'''    file = open("start.txt", "r")   # Open en lees de inhoud van het bestand waar de route in staat.
+    file = open("start.txt", "r")   # Open en lees de inhoud van het bestand waar de route in staat.
     start = file.read()
     file.close()
 
-    start = int(start)'''
+    start = int(start)
 
     buttonstate = GPIO.input(buttonPin)
     if (buttonstate == 0 or start == 1):          # Er wordt hier gekeken of de startbutton is ingedrukt of niet.
@@ -115,5 +116,7 @@ while not stop:
 
     sleep(.2)
 
-
+file = open("start.txt", "w")
+file.write("0")
+file.close
 GPIO.cleanup()
