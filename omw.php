@@ -16,14 +16,9 @@
       <div class="col-sm-8" style="background-color:#F5F5DC; box-shadow: 10px 10px 8px #888888; border-radius: 50px;">
         </br>
       <h1 style="text-shadow: 2.5px 2.5px 2px #888888;">C.R.E.A.M. Remote Control</h1></br>
+      <h2> Uw Bestelling gaat nu onderweg! </h2></br></br>
 
 <!-- Form that sends code to the post.php script -->
-<form action="post.php" method="POST">
-      <input type="submit" name="route" value="1" id="left"class="button">
-      <input type="submit" name="route" value="2" id="up" class="button">
-      <input type="submit" name="route" value="3" id="right" class="button">
-    </br></br>
-</form>
     </div>
   </div>
 </center>
