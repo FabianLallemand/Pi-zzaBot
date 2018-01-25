@@ -77,7 +77,7 @@ while not stop:
                 print("rechtsaf")
             elif (curr_left == 0) and (curr_middle == 1) and (curr_right == 1):
                 print("scherplinks")
-                while curr_middle and (draaitijdcou < 50):
+                while curr_middle:
                     curr_middle = GPIO.input(middleIR)
                     robot.scherplinks()
             elif (curr_left == 1) and (curr_middle == 1) and (curr_right == 0):
