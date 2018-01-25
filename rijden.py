@@ -77,13 +77,11 @@ while not stop:
                 print("rechtsaf")
             elif (curr_left == 0) and (curr_middle == 1) and (curr_right == 1): # Hier neemt de robot een scherpe linkse bocht
                 print("scherplinks")
-                while curr_middle:
-                    curr_middle = GPIO.input(middleIR)
+                for x in range(0, 20):
                     robot.scherplinks()
             elif (curr_left == 1) and (curr_middle == 1) and (curr_right == 0): # Hier neemt de robot een scherpe linkse bocht.
                 print("scherprechts")
-                while curr_middle:
-                    curr_middle = GPIO.input(middleIR)
+                for x in range(0, 20):
                     robot.scherprechts()
             elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 0):
                 if (kruisingCount == 1):    # Hier wordt gekeken of 'C.R.E.A.M. Pi' al een keer over een kruispunt gereden is.
