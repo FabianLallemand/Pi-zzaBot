@@ -89,17 +89,17 @@ while not stop:
             curr_middle = GPIO.input(middleIR)
             curr_right = GPIO.input(rightIR)
 
-            if (curr_left == 0) and (curr_middle == 0) and (curr_right == 1):   # Hier gaat de robot linksaf
+            if (curr_left == 0) and (curr_middle == 0) and (curr_right == 1):   # Als deze condities waar zijn gaat de robot linksaf
                 robot.linksaf()
                 print("linksaf")
-            elif (curr_left == 1) and (curr_middle == 0) and (curr_right == 0): # Hier gaat de robot rechtsaf
+            elif (curr_left == 1) and (curr_middle == 0) and (curr_right == 0): # Als deze condities waar zijn gaat de robot rechtsaf
                 robot.rechtsaf()
                 print("rechtsaf")
-            elif (curr_left == 0) and (curr_middle == 1) and (curr_right == 1): # Hier neemt de robot een scherpe linkse bocht
+            elif (curr_left == 0) and (curr_middle == 1) and (curr_right == 1): # Als deze condities waar zijn neemt de robot een scherpe linkse bocht
                 print("scherplinks")
                 for x in range(0, 20):
                     robot.scherplinks()
-            elif (curr_left == 1) and (curr_middle == 1) and (curr_right == 0): # Hier neemt de robot een scherpe rechtse bocht.
+            elif (curr_left == 1) and (curr_middle == 1) and (curr_right == 0): # Als deze condities waar zijn neemt de robot een scherpe rechtse bocht.
                 print("scherprechts")
                 for x in range(0, 20):
                     robot.scherprechts()
