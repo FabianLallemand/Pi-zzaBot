@@ -18,6 +18,7 @@ stop = False
 kruisingCount = 0
 route = 0
 draaitijdcount = 0
+startknop = 0
 
 print(route)
 
@@ -59,8 +60,11 @@ GPIO.setup(rightIR,GPIO.IN) #GPIO 18 -> Right IR out
 
 while not stop:
 
-    buttonstate = GPIO.input(buttonPin)
-    if (buttonstate == 0):          # Er wordt hier gekeken of de startbutton is ingedrukt of niet.
+    file = open("direction.txt", "r")   # Open en lees de inhoud van het bestand waar de route in staat.
+    route = file.read()
+    file.close()
+    #buttonstate = GPIO.input(buttonPin)
+    if (startknop == 1):          # Er wordt hier gekeken of de startbutton is ingedrukt of niet.
 
 
         file = open("direction.txt", "r")   # Open en lees de inhoud van het bestand waar de route in staat.
@@ -91,7 +95,7 @@ while not stop:
                 print("scherplinks")
                 for x in range(0, 20):
                     robot.scherplinks()
-            elif (curr_left == 1) and (curr_middle == 1) and (curr_right == 0): # Hier neemt de robot een scherpe linkse bocht.
+            elif (curr_left == 1) and (curr_middle == 1) and (curr_right == 0): # Hier neemt de robot een scherpe rechtse bocht.
                 print("scherprechts")
                 for x in range(0, 20):
                     robot.scherprechts()
