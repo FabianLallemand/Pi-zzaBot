@@ -77,13 +77,15 @@ while not stop:
                 print("rechtsaf")
             elif (curr_left == 0) and (curr_middle == 1) and (curr_right == 1):
                 print("scherplinks")
-                while curr_middle:
-                    curr_middle = GPIO.input(middleIR)
+                #while curr_middle:
+                    #curr_middle = GPIO.input(middleIR)
+                for x in range(0, 150):
                     robot.scherplinks()
             elif (curr_left == 1) and (curr_middle == 1) and (curr_right == 0):
                 print("scherprechts")
-                while curr_middle:
-                    curr_middle = GPIO.input(middleIR)
+                #while curr_middle:
+                    #curr_middle = GPIO.input(middleIR)
+                for x in range(0, 150):
                     robot.scherprechts()
             elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 0):
                 if (kruisingCount == 1):
