@@ -9,10 +9,7 @@ rightIR = 18
 
 class Sensor:
 
-    GP = 0
-    IO = 0
-
-    def __init__(self, leftIR, middleIR, rightIR):
+    def __init__(self, leftIR, middleIR, rightIR):    # Door deze def wordt de infrarood sensor gesetupt.
 
         self.leftIR = leftIR
         self.middleIR = middleIR
