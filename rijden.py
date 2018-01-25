@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 from time import sleep
 from robot_class import Robot
 from lamps import *
+import sys
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -15,8 +16,10 @@ buttonstate = 1
 started = False
 stop = False
 kruisingCount = 0
-route = 3
+route = 0
 draaitijdcount = 0
+
+print(route)
 
 
 robot = Robot()
@@ -58,6 +61,17 @@ while not stop:
 
     buttonstate = GPIO.input(buttonPin)
     if (buttonstate == 0):          # Er wordt hier gekeken of de startbutton is ingedrukt of niet.
+
+
+        # We commentaiereren nog meer
+        file = open("direction.txt", "r")
+        route = file.read()
+        file.close()
+
+        route = int(route)
+
+        print("Voor het starten, wat is mijn directie?", route)
+
         print("start")
         started = True
         GPIO.output(21,True)
