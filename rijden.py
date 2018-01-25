@@ -60,11 +60,12 @@ GPIO.setup(rightIR,GPIO.IN) #GPIO 18 -> Right IR out
 
 while not stop:
 
-    file = open("direction.txt", "r")   # Open en lees de inhoud van het bestand waar de route in staat.
-    route = file.read()
+    file = open("start.txt", "r")   # Open en lees de inhoud van het bestand waar de route in staat.
+    startknop = file.read()
     file.close()
-    #buttonstate = GPIO.input(buttonPin)
-    if (startknop == 1):          # Er wordt hier gekeken of de startbutton is ingedrukt of niet.
+
+    buttonstate = GPIO.input(buttonPin)
+    if (buttonstate == 0 or startknop == 1):          # Er wordt hier gekeken of de startbutton is ingedrukt of niet.
 
 
         file = open("direction.txt", "r")   # Open en lees de inhoud van het bestand waar de route in staat.
