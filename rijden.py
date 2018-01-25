@@ -64,6 +64,8 @@ while not stop:
     startknop = file.read()
     file.close()
 
+    startknop = int(startknop)
+
     buttonstate = GPIO.input(buttonPin)
     if (buttonstate == 0 or startknop == 1):          # Er wordt hier gekeken of de startbutton is ingedrukt of niet.
 
