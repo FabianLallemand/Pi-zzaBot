@@ -1,0 +1,77 @@
+body {
+  background: url('cream.png') repeat;
+}
+
+.alt1 {
+  background: url("plus.png") no-repeat;
+    background-size: 100%;
+  width:16px;
+  height:16px;
+}
+
+.alt2 {
+  background: url("power.png") no-repeat;
+    background-size: 100%;
+  width:64px;
+  height:64px;
+}
+
+.button{
+  padding:3px;
+  margin-left: 32px;
+  margin-right: 32px;
+  width: 128px;
+  height: 128px;
+  font-size: 0px;
+      border: 5px solid black;
+      border-radius: 16px;
+  text-decoration: none;
+  box-shadow: 10px 10px 8px #888888;
+
+}
+
+.button:hover{
+  background-color:black;
+  background-position: -21px -35px;
+  background-repeat:repeat;
+  filter: invert(75%);
+  -webkit-filter: invert(75%);
+}
+
+.button:active {
+  background-color:black;
+  background-position: -21px -35px;
+  background-repeat:repeat;
+  filter: invert(50%);
+  -webkit-filter: invert(50%);
+}
+
+#left {
+  background: url("left.png") no-repeat;
+    background-size: 100%;
+
+}
+
+#up {
+  background: url("up.png") no-repeat;
+    background-size: 100%;
+
+}
+
+
+#right {
+  background: url("right.png") no-repeat;
+    background-size: 100%;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+  .button{
+    margin-left: 55px;
+    margin-right: 55px;
+    margin-bottom: 20px;
+
+
+  }
+}

@@ -7,21 +7,24 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="theme.css">
   </head>
   <body>
     <center>
+    </br></br>
     <div class="container">
-      <div class="col-sm-8" style="background-color:lavender;">
+      <div class="col-sm-8" style="background-color:#F5F5DC; box-shadow: 10px 10px 8px #888888; border-radius: 50px;">
         </br>
-      <h1>C.R.E.A.M. Remote Control</h1></br>
+      <h1 style="text-shadow: 2.5px 2.5px 2px #888888;">C.R.E.A.M. Remote Control</h1></br>
 
-
+<!-- Form that sends code to the post.php script -->
 <form action="post.php" method="POST">
-      <input type="submit" name="route" value="1" class="btn btn-danger">
-      <input type="submit" name="route" value="2" class="btn btn-danger">
-      <input type="submit" name="route" value="3" class="btn btn-danger">
-      </br></br>
+      <input type="submit" name="route" value="1" id="left"class="button">
+      <input type="submit" name="route" value="2" id="up" class="button">
+      <input type="submit" name="route" value="3" id="right" class="button">
+    </br></br></br></br>
+      <div class="alt1" type="image" src="plus.png"></div></br></br>
+      <div class="alt2" type="image" src="power.png"></div></br></br>
 </form>
     </div>
   </div>
