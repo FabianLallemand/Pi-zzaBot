@@ -12,15 +12,11 @@ GPIO.setup(linkslamp,GPIO.OUT) #linker lichten
 GPIO.setup(discolamp,GPIO.OUT) #worden de disco's
 GPIO.setup(rechtslamp,GPIO.OUT) #rechter lichten
 
-def discolight(finish): # Deze def zorgt ervoor dat aan het einde van de rit de disco lampjes aan gaan.
-
-    if finish == True:
+def discolight(): # Deze def zorgt ervoor dat aan het einde van de rit de disco lampjes aan gaan.
         GPIO.output(discolamp,True)
         sleep(5)
         GPIO.output(discolamp,False)
-        print("joepie")
-    else:
-        print("nog niet klaar of onbekend")
+        print("PIZZA IS HERE, LETS GET THIS PARTY STARTED")
 
 def knipper_links():    # Deze def zorgt ervoor dat de linker lampjes gaan knipperen.
 

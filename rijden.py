@@ -87,6 +87,7 @@ while not stop:
                 if (kruisingCount == 1):    # Hier wordt gekeken of 'C.R.E.A.M. Pi' al een keer over een kruispunt gereden is.
                     started = False
                     stop = True
+                    discolight()
                 else:
                     kruispunt(route)
                     kruisingCount += 1
