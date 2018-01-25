@@ -21,17 +21,17 @@ draaitijdcount = 0
 
 robot = Robot()
 
-def kruispunt(route):
-    if (route == 1):
+def kruispunt(route):   # In deze collectie van if statements wordt er gekeken welke route er is opgegeven.
+    if (route == 1):            # 1 staat voor links.
         knipper_links()
         for x in range(0, 150):
             robot.linksaf()
         while (GPIO.input(middleIR)):
             robot.scherplinks()
-    elif (route == 2):
+    elif (route == 2):          # 2 staat voor rechtdoor.
         sleep(2)
         robot.rechtdoor()
-    elif (route == 3):
+    elif (route == 3):          # 3 staat voor rechts.
         knipper_rechts()
         for x in range(0, 150):
             robot.rechtsaf()
@@ -57,7 +57,7 @@ GPIO.setup(rightIR,GPIO.IN) #GPIO 18 -> Right IR out
 while not stop:
 
     buttonstate = GPIO.input(buttonPin)
-    if (buttonstate == 0):
+    if (buttonstate == 0):          # Er wordt hier gekeken of de startbutton is ingedrukt of niet.
         print("start")
         started = True
         GPIO.output(21,True)
@@ -69,32 +69,30 @@ while not stop:
             curr_middle = GPIO.input(middleIR)
             curr_right = GPIO.input(rightIR)
 
-            if (curr_left == 0) and (curr_middle == 0) and (curr_right == 1):
+            if (curr_left == 0) and (curr_middle == 0) and (curr_right == 1):   # Hier gaat de robot linksaf
                 robot.linksaf()
                 print("linksaf")
-            elif (curr_left == 1) and (curr_middle == 0) and (curr_right == 0):
+            elif (curr_left == 1) and (curr_middle == 0) and (curr_right == 0): # Hier gaat de robot rechtsaf
                 robot.rechtsaf()
                 print("rechtsaf")
-            elif (curr_left == 0) and (curr_middle == 1) and (curr_right == 1):
+            elif (curr_left == 0) and (curr_middle == 1) and (curr_right == 1): # Hier neemt de robot een scherpe linkse bocht
                 print("scherplinks")
-                #while curr_middle:
-                    #curr_middle = GPIO.input(middleIR)
-                for x in range(0,35):
+                while curr_middle:
+                    curr_middle = GPIO.input(middleIR)
                     robot.scherplinks()
-            elif (curr_left == 1) and (curr_middle == 1) and (curr_right == 0):
+            elif (curr_left == 1) and (curr_middle == 1) and (curr_right == 0): # Hier neemt de robot een scherpe linkse bocht.
                 print("scherprechts")
-                #while curr_middle:
-                    #curr_middle = GPIO.input(middleIR)
-                for x in range(0, 35):
+                while curr_middle:
+                    curr_middle = GPIO.input(middleIR)
                     robot.scherprechts()
             elif (curr_left == 0) and (curr_middle == 0) and (curr_right == 0):
-                if (kruisingCount == 1):
+                if (kruisingCount == 1):    # Hier wordt gekeken of 'C.R.E.A.M. Pi' al een keer over een kruispunt gereden is.
                     started = False
                     stop = True
                 else:
                     kruispunt(route)
                     kruisingCount += 1
-            else:
+            else:                           # Als de rest het allemaal niet is gaat de robot rechtdoor.
                 robot.rechtdoor()
 
     sleep(.2)
