@@ -107,6 +107,9 @@ while not stop:
                 if (kruisingCount == 1):    # Hier wordt gekeken of 'Creamy' al een keer over een kruispunt gereden is.
                     started = False
                     stop = True
+                    file = open("start.txt", "w")
+                    file.write("0")
+                    file.close
                     discolight()
                 else:
                     kruispunt(route)
@@ -116,7 +119,4 @@ while not stop:
 
     sleep(.2)
 
-file = open("start.txt", "w")
-file.write("0")
-file.close
 GPIO.cleanup()
